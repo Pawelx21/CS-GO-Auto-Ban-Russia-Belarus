@@ -29,9 +29,9 @@ public Plugin myinfo = {
 
 /* [ Standard Actions ] */
 public void OnClientAuthorized(int iClient, const char[] sAuthId) {
-	char sIp[32], sCountry[64];
+	char sIp[32], sCountry[3];
 	GetClientIP(iClient, sIp, sizeof(sIp));
-	if (GeoipCountry(sIp, sCountry, sizeof sCountry)) {
+	if (GeoipCode2(sIp, sCountry)) {
 		if (StrEqual(sCountry, "RU") || StrEqual(sCountry, "BY")) {
 			SBPP_BanPlayer(0, iClient, BAN_TIME, BAN_MESSAGE);
 		}
