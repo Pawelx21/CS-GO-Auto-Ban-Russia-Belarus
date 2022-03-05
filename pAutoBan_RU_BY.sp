@@ -28,7 +28,7 @@ public Plugin myinfo = {
 
 
 /* [ Standard Actions ] */
-public void OnClientAuthorized(int iClient, const char[] sAuthId) {
+public void OnClientPostAdminCheck(int iClient){
 	char sIp[32], sCountry[3];
 	GetClientIP(iClient, sIp, sizeof(sIp));
 	if (GeoipCode2(sIp, sCountry)) {
